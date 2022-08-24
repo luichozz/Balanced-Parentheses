@@ -1,0 +1,13 @@
+#JOSE LUIS ESPINOZA GONZALEZ
+def nest_paren(s):
+  result = True                      #BOOLEAN CREATED TO DETERMINE IF THE STRING IS BALANCED OR NOT
+  if s[0] == "(" and s[-1] == ")":   #IF THE FIRST CHARACTER AND LAST ARE COMPLEMENTING 
+    s = s[1:-1]                      #DELETE THEM FROM THE STRING
+    if s == "":                      #IF STRING IS EMPTY, MEANING IT WAS ABLE TO DELETE COMPLEMENTING PARENTHESES
+      result = True                    #RETURN TRUE, THAT IT IS BALANCED
+      print(result)
+    else:                            #ELSE IF THE STRING IS NOT EMPTY, USE RECURSION TO KEEP CHECKING IF THEY ARE BALANCED
+      return nest_paren(s)    
+  else:
+    result = False                   #IF THE STRING DOES NOT MATCH OR BALANCED WITH OPENING OR ENDING PARENTHESES, RETURN FALSE
+    print(result) 
